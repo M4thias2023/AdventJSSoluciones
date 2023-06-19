@@ -32,16 +32,38 @@
 
 //----------------PROBLEMA 3---------------------------
 
-const packOfGifts = ["book", "doll", "ball"]
-const reindeers = ["dasher", "dancer"]
+// const packOfGifts = ["book", "doll", "ball"]
+// const reindeers = ["dasher", "dancer"]
 
-// pack weights 4 + 4 + 4 = 12
-// reindeers can carry (2 * 6) + (2 * 6) = 24
-function distributeGifts(packOfGifts, reindeers) {
-    //obtener la suma de la cantidad de letras de cada regalo
-    const packWeigths = packOfGifts.join("").length
-    const MaximunRaindersWeigth = reindeers.join("").length * 2
-    return Math.floor(MaximunRaindersWeigth/packWeigths)
+// // pack weights 4 + 4 + 4 = 12
+// // reindeers can carry (2 * 6) + (2 * 6) = 24
+// function distributeGifts(packOfGifts, reindeers) {
+//     //obtener la suma de la cantidad de letras de cada regalo
+//     const packWeigths = packOfGifts.join("").length
+//     const MaximunRaindersWeigth = reindeers.join("").length * 2
+//     return Math.floor(MaximunRaindersWeigth/packWeigths)
+// }
+
+// console.log(distributeGifts(packOfGifts, reindeers)) // 2
+
+
+
+
+//----------------PROBLEMA 4---------------------------
+
+function fitsInOneBox(boxes) {
+    //comparar las medidas de cada caja y ordenarlas de mayor a menor
+    return boxes.sort((a,b) =>{
+        return (b.l , b.w , b.h)-(a.l , a.w , a.h)
+    //cumplir la condicion
+    }).slice(1).every((box,i) => {
+        return box.l < boxes[i].l && box.w < boxes[i].w && box.h < boxes[i].h
+    })
 }
 
-console.log(distributeGifts(packOfGifts, reindeers)) // 2
+console.log(fitsInOneBox([
+    { l: 1, w: 1, h: 1 },
+    { l: 2, w: 2, h: 2 },
+    { l: 3, w: 3, h: 3 }
+]) 
+)// true
