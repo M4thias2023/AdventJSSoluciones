@@ -67,3 +67,6 @@ console.log(fitsInOneBox([
     { l: 3, w: 3, h: 3 }
 ]) 
 )// true
+
+
+//----------------PROBLEMA 5---------------------------
