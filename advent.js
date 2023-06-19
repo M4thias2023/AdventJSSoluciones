@@ -52,7 +52,7 @@
 //----------------PROBLEMA 4---------------------------
 
 function fitsInOneBox(boxes) {
-    //comparar las medidas de cada caja y ordenarlas de mayor a menor
+    //comparar las medidas de cada caja y ordenarlas de mayor a menorr
     return boxes.sort((a,b) =>{
         return (b.l , b.w , b.h)-(a.l , a.w , a.h)
     //cumplir la condicion
